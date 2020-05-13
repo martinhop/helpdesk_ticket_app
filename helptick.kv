@@ -1,0 +1,97 @@
+
+
+WindowManager:
+    id: "windowmanager"
+    LoginScreen:
+        id: "login_screen"
+        name: "login"
+    Dashboard:
+        id: "dashboard_screen"
+        name: "dashboard"
+    Register:
+        id: "register_screen"
+        name: "register"
+
+<Label>
+    size_hint: 0.25,0.15
+<TextInput>
+    size_hint: 0.7,0.15
+
+
+
+<LoginScreen>
+
+    FloatLayout:
+        Label:
+            pos_hint: {"x": 0.01, "top": 0.90}
+            text: "Username: "
+        Label:
+            pos_hint: {"x": 0.01, "top": 0.65}
+            text: "Password: "
+
+        TextInput:
+            pos_hint: {"x": 0.25, "top": 0.90}
+            multiline: False
+        TextInput:
+            id: "passw"
+            pos_hint: {"x": 0.25, "top": 0.65}
+            password: True
+            multiline: False
+
+        Button:
+            text: "Register"
+            pos_hint: {"x": 0.4, "top": 0.25}
+            on_release:
+                app.root.current = "register"
+        Button:
+            text: "Submit"
+            pos_hint: {"x": 0.7, "top": 0.25}
+            on_release:
+                app.root.current = "dashboard"
+
+<Dashboard>
+
+
+
+    Button:
+        text: "Change User"
+        pos_hint: {"x": 0.4, "top": 0.25}
+        on_release:
+            app.root.current = "login"
+    Button:
+        text: "Log Out"
+        pos_hint: {"x": 0.7, "top": 0.25}
+        on_release:
+            app.Exit()
+
+<Register>
+
+    Label:
+        pos_hint: {"x": 0.01, "top": 0.90}
+        text: "Username: "
+    Label:
+        pos_hint: {"x": 0.01, "top": 0.7}
+        text: "Password: "
+    Label:
+        pos_hint: {"x": 0.01, "top": 0.5}
+        text: "Confirm Password: "
+
+    TextInput:
+        pos_hint: {"x": 0.25, "top": 0.90}
+        multiline: False
+    TextInput:
+        id: "newpassw"
+        pos_hint: {"x": 0.25, "top": 0.7}
+        password: True
+        multiline: False
+    TextInput:
+        id: "confirmpassw"
+        pos_hint: {"x": 0.25, "top": 0.5}
+        password: True
+        multiline: False
+
+    Button:
+        text: "Go Back"
+        pos_hint: {"x": 0.7, "top": 0.25}
+        on_release:
+            app.root.current = "login"

@@ -1,0 +1,27 @@
+<LoginScreen>
+    width: 500
+    height: 500
+
+    GridLayout:
+        size: root.width - 100, root.height - 100
+        pos: 50,50
+        cols: 1
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Username: "
+                col: 1
+
+            TextInput:
+                multiline: False
+
+            Label:
+                text: "Password: "
+
+            TextInput:
+                multiline: False
+                password: True
+        Button:
+            text: "Submit"
